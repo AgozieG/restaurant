@@ -9,7 +9,7 @@
 <meta property="og:description" content="Access your Daisy Life account and continue your order." />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<link rel="stylesheet" href="/site/css/styles.css" />
+<link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body data-page="login">
 <main class="wrap auth-wrap">
@@ -22,12 +22,12 @@
       <div class="field"><label for="password">Password</label><input id="password" type="password" placeholder="••••••••" /></div>
       <p class="err" id="err"></p>
       <button class="btn" style="width:100%">Log in →</button>
-      <p class="lead" style="font-size:14px;margin-top:14px">New here? <a href="/site/signup.html" style="color:var(--red-deep);font-weight:700">Create an account</a></p>
+      <p class="lead" style="font-size:14px;margin-top:14px">New here? <a href="./signup.html" style="color:var(--red-deep);font-weight:700">Create an account</a></p>
     </form>
   </div>
-  <div class="auth-art hero-art reveal"><img src="/site/img/grill.jpg" alt="Grilled catfish with pepper sauce" loading="lazy" /><div class="tag">🐟 Grilled fresh, every day</div></div>
+  <div class="auth-art hero-art reveal"><img src="./img/grill.jpg" alt="Grilled catfish with pepper sauce" loading="lazy" /><div class="tag">🐟 Grilled fresh, every day</div></div>
 </main>
-<script src="/site/js/app.js"></script>
+<script src="./js/app.js"></script>
 <script>
   const params = new URLSearchParams(location.search);
   const next = params.get("next") || "/site/menu.html";
