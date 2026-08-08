@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Checkout — Daisy Life</title>
+<meta name="description" content="Confirm your Daisy Life order: phone number, pickup or delivery, location and payment. Your order details are sent straight to the kitchen." />
+<meta property="og:title" content="Checkout — Daisy Life" />
+<meta property="og:description" content="Pickup or delivery, pay on arrival or by transfer. Fast checkout for your Daisy Life order." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<link rel="stylesheet" href="/site/css/styles.css" />
+</head>
+<body data-page="checkout">
+<main class="wrap" style="padding-top:40px">
+  <span class="eyebrow reveal">Step 2 of 2</span>
+  <h1 class="reveal" style="font-size:clamp(30px,5vw,48px);margin:14px 0 24px">Checkout</h1>
+  <div class="cart-layout">
+    <form class="card reveal" id="form" novalidate>
+      <h3 style="margin-bottom:14px">Your details</h3>
+      <div class="field"><label for="name">Full name</label><input id="name" required /></div>
+      <div class="field"><label for="email">Email address</label><input id="email" type="email" required /></div>
+      <div class="field"><label for="phone">Phone number</label><input id="phone" type="tel" placeholder="0803 000 0000" required /></div>
+
+      <h3 style="margin:24px 0 12px">How do you want it?</h3>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <label class="opt" style="flex:1;min-width:180px"><input type="radio" name="mode" value="Pickup" checked /><span>Pickup at the kitchen</span><span class="p">Free</span></label>
+        <label class="opt" style="flex:1;min-width:180px"><input type="radio" name="mode" value="Delivery" /><span>Delivery</span><span class="p">+₦1,500</span></label>
+      </div>
+
+      <div id="deliveryBox" style="display:none">
+        <div class="field" style="margin-top:14px"><label for="address">Delivery address</label><textarea id="address" rows="2" placeholder="Street, area, landmark"></textarea></div>
+        <div class="field"><label for="area">Area / town</label><input id="area" placeholder="e.g. New Haven, Enugu" /></div>
+      </div>
+
+      <h3 style="margin:24px 0 12px">Payment</h3>
+      <div style="display:grid;gap:8px">
+        <label class="opt"><input type="radio" name="pay" value="Bank transfer" checked /><span>Bank transfer</span><span class="p">Details sent after order</span></label>
+        <label class="opt"><input type="radio" name="pay" value="Card (demo)" /><span>Card</span><span class="p">Demo only</span></label>
+        <label class="opt"><input type="radio" name="pay" value="Cash on delivery / pickup" /><span>Cash on delivery / pickup</span><span class="p">Pay on arrival</span></label>
+      </div>
+
+      <div class="field" style="margin-top:16px"><label for="notes">Order notes (optional)</label><textarea id="notes" rows="2" placeholder="Anything the kitchen should know"></textarea></div>
+      <p class="err" id="err"></p>
+      <button class="btn" id="pay" style="width:100%">Pay & place order</button>
+      <p class="lead" style="font-size:12px;margin-top:12px">Demo website — no real payment is taken. Your order summary is sent to the restaurant by email.</p>
+    </form>
+
+    <aside class="card summary reveal" id="summary"></aside>
+  </div>
+</main>
+<script src="/site/js/data.js"></script>
+<script src="/site/js/app.js"></script>
+<script src="/site/js/checkout.js"></script>
+</body>
+</html>

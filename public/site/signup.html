@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Create an account — Daisy Life</title>
+<meta name="description" content="Sign up for a Daisy Life account to order grills, BBQ and rice faster, save your details and track your orders." />
+<meta property="og:title" content="Create an account — Daisy Life" />
+<meta property="og:description" content="Sign up and start building your plate at Daisy Life, New Haven, Enugu." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<link rel="stylesheet" href="/site/css/styles.css" />
+</head>
+<body data-page="signup">
+<main class="wrap auth-wrap">
+  <div class="auth-art hero-art reveal"><img src="/site/img/pasta.jpg" alt="Smoky spaghetti with chicken" loading="lazy" /><div class="tag">🍝 Most ordered plate</div></div>
+  <div class="reveal">
+    <span class="eyebrow">Join the table</span>
+    <h1 style="font-size:clamp(30px,5vw,46px);margin:14px 0 10px">Create your account</h1>
+    <p class="lead" style="margin-bottom:22px">Takes 20 seconds. Then build your first plate.</p>
+    <form class="card" id="form" novalidate>
+      <div class="field"><label for="name">Full name</label><input id="name" placeholder="Chinedu Okafor" /></div>
+      <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@example.com" /></div>
+      <div class="field"><label for="phone">Phone number</label><input id="phone" type="tel" placeholder="0803 000 0000" /></div>
+      <div class="field"><label for="password">Password</label><input id="password" type="password" placeholder="At least 6 characters" /></div>
+      <p class="err" id="err"></p>
+      <button class="btn fresh" style="width:100%">Create account →</button>
+      <p class="lead" style="font-size:14px;margin-top:14px">Already have one? <a href="/site/login.html" style="color:var(--red-deep);font-weight:700">Log in</a></p>
+    </form>
+  </div>
+</main>
+<script src="/site/js/app.js"></script>
+<script>
+  document.getElementById("form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const err = document.getElementById("err");
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const pass = document.getElementById("password").value;
+    if (name.length < 2) return (err.textContent = "Please enter your full name.");
+    if (!/^\S+@\S+\.\S+$/.test(email)) return (err.textContent = "Please enter a valid email address.");
+    if (!/^[0-9+\s-]{7,}$/.test(phone)) return (err.textContent = "Please enter a valid phone number.");
+    if (pass.length < 6) return (err.textContent = "Password must be at least 6 characters.");
+    try {
+      Auth.signup(name, email, pass, phone);
+      toast("Account created — welcome to Daisy Life!");
+      setTimeout(() => (location.href = "/site/menu.html"), 600);
+    } catch (ex) { err.textContent = ex.message; }
+  });
+</script>
+</body>
+</html>
