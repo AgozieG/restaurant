@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Menu & Ordering — Daisy Life Enugu</title>
+<meta name="description" content="Browse the full Daisy Life menu: BBQ combos, grills, wings platters, pasta, rice, sides and drinks. Pick toppings and flavours and add to cart." />
+<meta property="og:title" content="Daisy Life Menu — Grills, BBQ, Pasta & Rice" />
+<meta property="og:description" content="Build your plate with sides, sauces, proteins and wing flavours. Live pricing." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="/site/css/styles.css" />
+</head>
+<body data-page="menu">
+<main class="wrap" style="padding-top:40px">
+  <span class="eyebrow reveal">The full menu</span>
+  <h1 class="reveal" style="font-size:clamp(32px,5vw,52px);margin:14px 0 10px">Build your plate</h1>
+  <p class="lead reveal">Tap any dish to choose sides, sauces, proteins and flavours — the price updates as you go.</p>
+
+  <div class="filters reveal" id="filters"></div>
+  <div class="field reveal" style="max-width:340px"><input id="search" type="search" placeholder="Search the menu…" /></div>
+  <div class="menu-grid" id="menuGrid" style="margin:14px 0 40px"></div>
+</main>
+
+<div class="overlay" id="modal"><div class="sheet" id="sheet"></div></div>
+
+<script src="/site/js/data.js"></script>
+<script src="/site/js/app.js"></script>
+<script src="/site/js/menu.js"></script>
+</body>
+</html>
